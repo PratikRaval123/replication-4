@@ -1,26 +1,35 @@
-# Wedding invite — Duulat & Adema
+# Wedding Invitation Template — Duulat & Adema
 
-Reusable mobile-first wedding invitation template based on
-[priglasiabakirova.tilda.ws/duulatadema](https://priglasiabakirova.tilda.ws/duulatadema).
+Reusable Next.js wedding invitation template. Mobile-first, bilingual (RU / KZ), config-driven.
 
-## Reuse for a new couple
-
-1. Edit `src/config/wedding.js` (names, date, venue, texts, links, media paths).
-2. Replace images under `public/assets/`.
-3. Optionally set `RSVP_WEBHOOK_URL` or `GOOGLE_SHEETS_WEBHOOK_URL` in `.env.local`.
-
-Do not change section components unless you need a layout change.
-
-## Develop
+## Quick start
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3003](http://localhost:3003).
+Open [http://localhost:3000](http://localhost:3000).
 
-## Stack
+## Customize for a new couple
 
-- Next.js + React + Tailwind CSS v4 + Framer Motion
-- RU / KZ language toggle (same pattern as previous replications)
+Edit only:
+
+1. `src/config/wedding.js` — names, dates, venue, texts, media paths, RSVP copy
+2. `public/assets/` — photos, icons, decorations
+
+You should not need to change section components for a typical client.
+
+## Language toggle
+
+Fixed top-right **RU / KZ** pills. Content uses `.lang-ru` / `.lang-kz` CSS switching and `{ ru, kz }` fields in config.
+
+## RSVP
+
+Form posts to `/api/rsvp`. Optional Google Sheets webhook:
+
+```env
+GOOGLE_SHEETS_WEBHOOK_URL=https://script.google.com/...
+```
+
+Without it, submissions are logged in the server console.
