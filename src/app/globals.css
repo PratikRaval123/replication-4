@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-script: var(--font-great-vibes), "Great Vibes", cursive;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-montserrat), Montserrat, system-ui, sans-serif;
+  --color-paper: #ffffff;
+  --color-ink: #2e2e2e;
+  --color-muted: #a8a29a;
+  --color-soft: #c8c2b8;
+  --color-rose: #e8b4b4;
+  --color-rose-deep: #d89a9a;
+  --color-heart: #8b2e2e;
+}
+
+html {
+  margin: 0;
+  overflow-x: clip;
+  overflow-y: scroll;
+  background: #ececec;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  overflow-y: visible;
+  min-height: 100%;
+  background: #ececec;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  touch-action: pan-y;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.lang-ru,
+.lang-kz {
+  display: none !important;
+}
+
+.site[data-lang="ru"] .lang-ru,
+html[data-lang="ru"] .lang-ru,
+.site[data-lang="kz"] .lang-kz,
+html[data-lang="kz"] .lang-kz {
+  display: revert !important;
+}
+
+.invite-shell {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  background: var(--color-paper);
+  box-shadow: 0 0 30px #00000018;
+  position: relative;
+  overflow: clip;
+  touch-action: pan-y;
+}
+
+.section-pad {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.hero-overlay-text {
+  text-shadow: 0 2px 18px #00000066;
+}
+
+.music-ring text {
+  fill: #8a8a8a;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+}
+
+.flip-digit {
+  background: linear-gradient(180deg, #f0cfcf 0%, #e8b4b4 48%, #dba0a0 52%, #e8b4b4 100%);
+  box-shadow: 0 2px 6px #00000022, inset 0 1px 0 #ffffff88;
+  border-radius: 4px;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.flip-digit::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #00000022;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.55rem 0.2rem;
+  text-align: center;
+}
+
+.venue-box {
+  border: 1px solid #cfcfcf;
+  padding: 1.4rem 1rem 1.1rem;
+}
+
+.rsvp-input {
+  width: 100%;
+  border: 1px solid #222;
+  background: #fff;
+  padding: 0.7rem 0.85rem;
+  outline: none;
+}
+
+.rsvp-input:focus {
+  border-color: #000;
+}
+
+.rsvp-submit {
+  width: 100%;
+  background: #111;
+  color: #fff;
+  border: 0;
+  padding: 0.95rem 1rem;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s ease;
+}
+
+.rsvp-submit:disabled {
+  opacity: 0.55;
+}
+
+.radio-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  cursor: pointer;
+}
+
+.radio-row input {
+  margin-top: 0.28rem;
+  accent-color: #111;
+}
